@@ -59,6 +59,26 @@ greet_node       rag_node      lead_node
           END               mock_lead_capture()
                                    │
                                   END
+
+
+---
+
+## 🧠 Architecture Explanation
+
+This project uses **LangGraph** to implement a structured conversational AI agent instead of a simple sequential chatbot. LangGraph allows defining nodes such as intent detection, RAG retrieval, and lead capture, and controls the flow between them using a state-driven approach.
+
+Intent detection is implemented using a **hybrid strategy**. Common intents like greeting, pricing, and high-intent actions are handled using rule-based logic, while the Gemini LLM is used as a fallback for ambiguous inputs. This reduces API usage, improves performance, and ensures reliability.
+
+The RAG pipeline retrieves information from a local JSON file (`data.json`) instead of relying entirely on the LLM. This ensures accurate and fast responses for pricing and policy-related queries.
+
+State management is handled using LangGraph's state object, which stores user input, detected intent, responses, and lead information. This allows the system to maintain context across multiple conversation turns (5–6 interactions).
+
+For high-intent users, a lead capture workflow is triggered. The agent collects user details step-by-step and submits them using a mock CRM tool.
+
+---
+
+## 🏗️ Workflow
+
 ```
 
 **State shared across all nodes:**
