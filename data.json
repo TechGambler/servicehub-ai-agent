@@ -1,0 +1,55 @@
+{
+  "pricing_plans": [
+    {
+      "name": "Basic Plan",
+      "price": "$19/month",
+      "features": [
+        "Up to 3 users",
+        "5 GB storage",
+        "Email support (72-hour response)",
+        "Basic analytics dashboard",
+        "1 integration",
+        "14-day free trial"
+      ]
+    },
+    {
+      "name": "Pro Plan",
+      "price": "$59/month",
+      "features": [
+        "Up to 20 users",
+        "50 GB storage",
+        "Priority email & live chat support (12-hour response)",
+        "Advanced analytics & reports",
+        "Up to 10 integrations",
+        "API access",
+        "14-day free trial"
+      ]
+    },
+    {
+      "name": "Enterprise Plan",
+      "price": "Custom pricing — contact sales",
+      "features": [
+        "Unlimited users",
+        "Unlimited storage",
+        "24/7 dedicated support with SLA",
+        "Custom analytics & reporting",
+        "Unlimited integrations",
+        "Dedicated account manager",
+        "Onboarding & training sessions"
+      ]
+    }
+  ],
+  "policies": {
+    "refund": "30-day money-back guarantee on all paid plans. Contact support@servicehub.com within 30 days of purchase for a full refund.",
+    "free_trial": "All plans include a 14-day free trial. No credit card required.",
+    "cancellation": "Cancel anytime from your dashboard. Access continues until end of billing period.",
+    "support": "Basic: email, 72-hour response. Pro: priority email + live chat, 12-hour response. Enterprise: 24/7 with dedicated account manager.",
+    "data_security": "AES-256 encryption at rest, TLS 1.3 in transit. SOC 2 Type II compliant.",
+    "upgrades": "Upgrade anytime (immediate, prorated). Downgrade takes effect next billing cycle."
+  },
+  "platforms": ["Web", "iOS", "Android", "Desktop"],
+  "contact": {
+    "sales": "sales@servicehub.com",
+    "support": "support@servicehub.com"
+  }
+}
