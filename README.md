@@ -1,20 +1,20 @@
 # servicehub-ai-agent
 # 🤖 ServiceHub AI Agent
 
-A conversational AI sales assistant built with **Python**, **LangGraph**, and **Google Gemini**.  
-It detects user intent, answers questions from a local knowledge base using RAG, captures leads,  
-and simulates submitting them to a CRM — all through a clean CLI interface.
+A conversational AI sales assistant built using **Python**, **LangGraph**, and **Google Gemini**.  
+It detects user intent, retrieves information using a RAG pipeline, captures leads, and simulates CRM submission — all through a CLI interface.
 
 ---
 
 ## ✨ Features
 
-- 🧠 **Intent Detection** — Classifies every message into `greeting`, `pricing`, `high_intent`, or `other` using Gemini
-- 📚 **RAG (Retrieval-Augmented Generation)** — Answers pricing and policy questions grounded in `data.json`
-- 🔄 **Multi-turn Memory** — Remembers the last few exchanges for natural, context-aware replies
-- 🎯 **Lead Capture Flow** — Collects name → email → platform when a user shows buying intent
-- 📡 **Mock CRM API** — Simulates submitting lead data to a CRM system after collection
-- 🔒 **No hardcoded secrets** — API key is read from an environment variable
+- 🧠 **Hybrid Intent Detection** (Rule-based + Gemini fallback)
+- 📚 **RAG (Retrieval-Augmented Generation)** using `data.json`
+- 🔄 **Multi-turn Memory (5–6 turns)** using LangGraph state
+- 🎯 **Lead Capture Flow** (name → email → platform)
+- 📡 **Mock CRM API Simulation**
+- 🔒 **Environment-based API key (no hardcoding)**
+
 
 ---
 
@@ -76,6 +76,28 @@ greet_node       rag_node      lead_node
 
 ---
 
+---
+
+## 📱 WhatsApp Deployment (Webhook Integration)
+
+To deploy this agent on WhatsApp, we can integrate it using the WhatsApp Business API and a webhook-based backend.
+
+1. A backend server (Flask/FastAPI) receives incoming WhatsApp messages via webhook.
+2. The message is passed to the LangGraph agent as user input.
+3. The agent processes the request through intent detection, RAG, or lead capture.
+4. The response is sent back to WhatsApp using the API.
+
+User state can be maintained using a unique identifier such as the phone number, allowing multi-turn conversations across sessions.
+
+---
+
+## ▶️ How to Run Locally
+
+### 1. Clone the repository
+```bash
+git clone <your-repo-link>
+cd servicehub-agent
+```
 ## 💬 Example Conversation
 
 ```
